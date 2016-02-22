@@ -10,6 +10,7 @@
     "url": "git://github.com/"
   },
   "dependencies": {
-    "serverless-client-s3": "0.0.1"
+    "serverless-client-s3": "0.0.1",
+    "serverless-cors-plugin": "^0.3.1"
   }
 }
