@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Note taking made easy - Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/skeleton/2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <div class="flash hidden" data-id="flash"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <h1 class="center">Notes</h1>
+          <p class="center">Note taking made easy.</p>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+          <input type="hidden" data-id="selected-note-id" value="">
+          <textarea class="u-full-width" placeholder="Write something..." data-id="body"></textarea>
+          <button class="button-primary" data-id="save-note">Save</button>
+          <button class="u-pull-right" data-id="refresh">Refresh list</button>
+          <button class="u-pull-right" data-id="clear">Clear</button>
+        </div>
+        <div class="six columns">
+          <div data-id="dynamic-content"><!-- the note list is rendered here --></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
