@@ -1,0 +1,5 @@
+{
+  "region": "eu-west-1",
+  "resourcesStackName": "notes-dev-r",
+  "iamRoleArnLambda": "arn:aws:iam::853749767834:role/notes-dev-r-IamRoleLambda-8COGPND067BG"
+}
