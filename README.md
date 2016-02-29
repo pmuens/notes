@@ -1,5 +1,5 @@
 # Notes
-Note taking application written for the book ["Learn Serverless"](http://learnserverless.com).
+Note taking application written for the book ["Learn Serverless"](http://learnserverless.club).
 
 Implements all CRUD operations.
 
