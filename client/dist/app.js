@@ -103,7 +103,6 @@
         },
         error: function (xhr, textStatus, errorThrown) {
           showFlash('An error ocurred while deleting the note: ' + textStatus);
-          console.log(xhr);
         }
       });
     } else {
