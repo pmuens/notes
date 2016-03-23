@@ -1,4 +1,6 @@
 {
+  "name": "notes-functions-lib",
+  "version": "0.1.0",
   "dependencies": {
     "uuid": "^2.0.1"
   }
