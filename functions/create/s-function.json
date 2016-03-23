@@ -1,13 +1,15 @@
 {
   "name": "create",
+  "runtime": "nodejs",
+  "description": "Serverless Lambda function for project: notes",
   "customName": false,
   "customRole": false,
-  "handler": "notes/create/handler.handler",
+  "handler": "create/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
+  "authorizer": {},
   "custom": {
-    "excludePatterns": [],
-    "envVars": []
+    "excludePatterns": []
   },
   "endpoints": [
     {
@@ -15,6 +17,7 @@
       "method": "POST",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
@@ -35,5 +38,14 @@
       }
     }
   ],
-  "events": []
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "notes",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
 }

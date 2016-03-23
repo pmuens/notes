@@ -39,6 +39,11 @@
                 "logs:PutLogEvents"
               ],
               "Resource": "arn:aws:logs:${region}:*:*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "*",
+              "Resource": "arn:aws:dynamodb:${region}:*:table/${project}-notes-${stage}"
             }
           ]
         },
@@ -47,6 +52,29 @@
             "Ref": "IamRoleLambda"
           }
         ]
+      }
+    },
+    "DynamoDbNotesTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        },
+        "TableName": "${project}-notes-${stage}"
       }
     }
   },

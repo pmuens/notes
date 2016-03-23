@@ -1,24 +1,27 @@
 {
-  "name": "update",
+  "name": "index",
+  "runtime": "nodejs",
+  "description": "Serverless Lambda function for project: notes",
   "customName": false,
   "customRole": false,
-  "handler": "notes/update/handler.handler",
+  "handler": "index/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
+  "authorizer": {},
   "custom": {
-    "excludePatterns": [],
-    "envVars": []
+    "excludePatterns": []
   },
   "endpoints": [
     {
-      "path": "notes/{id}",
-      "method": "PUT",
+      "path": "notes",
+      "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-         "application/json": "{ \"id\": \"$input.params('id')\", \"note\": $input.json('$.note') }"
+        "application/json": ""
       },
       "responses": {
         "400": {
@@ -35,5 +38,14 @@
       }
     }
   ],
-  "events": []
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "notes",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
 }

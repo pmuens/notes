@@ -1,24 +1,27 @@
 {
-  "name": "show",
+  "name": "destroy",
+  "runtime": "nodejs",
+  "description": "Serverless Lambda function for project: notes",
   "customName": false,
   "customRole": false,
-  "handler": "notes/show/handler.handler",
+  "handler": "destroy/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
+  "authorizer": {},
   "custom": {
-    "excludePatterns": [],
-    "envVars": []
+    "excludePatterns": []
   },
   "endpoints": [
     {
       "path": "notes/{id}",
-      "method": "GET",
+      "method": "DELETE",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-         "application/json": "{ \"id\": \"$input.params('id')\" }"
+        "application/json": "{ \"id\": \"$input.params('id')\" }"
       },
       "responses": {
         "400": {
@@ -35,5 +38,14 @@
       }
     }
   ],
-  "events": []
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "notes",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
 }
