@@ -3,9 +3,14 @@
   "custom" : {
     "client": {
         "bucketName": "notes.${stage}.${region}"
+    },
+    "cors": {
+      "allowOrigin": "*",
+      "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
     }
   },
   "plugins": [
-    "serverless-client-s3"
+    "serverless-client-s3",
+    "serverless-cors-plugin"
   ]
 }
