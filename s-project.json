@@ -1,6 +1,10 @@
 {
   "name": "notes",
-  "custom": {},
+  "custom" : {
+    "client": {
+        "bucketName": "notes.${stage}.${region}"
+    }
+  },
   "plugins": [
     "serverless-client-s3"
   ]
